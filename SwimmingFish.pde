@@ -1,4 +1,5 @@
 class SwimmingFish extends Mover {
+  float mass = 1.0;
 
   void update() {
     // Acceleration direction - toward the mouse
@@ -17,7 +18,8 @@ class SwimmingFish extends Mover {
         float forcey = map(noise(ty), 0, 1, -2.0, 2.0);
 
         PVector currentForce = new PVector(forcex, forcey);
-        acceleration.add(currentForce);
+        PVector currentForcePerUnitMass = PVector.div(currentForce, mass);
+        acceleration.add(currentForcePerUnitMass);
       }
     }
 

@@ -6,13 +6,15 @@
 // Using objects, inheritance, polymorphism
 
 NervousFly nervousFly;
-SwimmingFish swimmingFish;
+SwimmingFish[] swimmingFish = new SwimmingFish[2];
 
 void setup() {
   size(640, 480);
   background(50, 125);
   nervousFly = new NervousFly();
-  swimmingFish = new SwimmingFish();
+  for (int i = 0; i < 2; i++) {
+    swimmingFish[i] = new SwimmingFish();
+  }
 }
 
 void draw() {
@@ -21,7 +23,9 @@ void draw() {
   nervousFly.checkEdges();
   nervousFly.display();
 
-  swimmingFish.update();
-  swimmingFish.checkEdges();
-  swimmingFish.display();
+  for (int i = 0; i < 2; i++) {
+    swimmingFish[i].update();
+    swimmingFish[i].checkEdges();
+    swimmingFish[i].display();
+  }
 }
