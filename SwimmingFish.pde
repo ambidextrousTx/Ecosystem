@@ -1,5 +1,8 @@
 class SwimmingFish extends Mover {
-  float mass = 1.0;
+
+  SwimmingFish(float _mass) {
+    mass = _mass;
+  }
 
   void update() {
     // Acceleration direction - toward the mouse
