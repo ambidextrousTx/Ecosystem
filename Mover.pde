@@ -27,14 +27,6 @@ class Mover {
     acceleration.x = force.x / mass;
     acceleration.y = force.y / mass;
 
-    if (keyPressed) {
-        if (key == 'w') {
-            PVector current = new PVector(-1.0, 0.0);
-            current.mult(2.0);
-
-            acceleration.add(current);
-        }
-    }
   }
 
   void checkEdges() {

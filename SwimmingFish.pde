@@ -10,6 +10,17 @@ class SwimmingFish extends Mover {
 
     acceleration = direction;
 
+    if (keyPressed) {
+      // the fish is affected by random eddy currents in the water
+      if (key == 's') {
+        float forcex = map(noise(tx), 0, 1, -2.0, 2.0);
+        float forcey = map(noise(ty), 0, 1, -2.0, 2.0);
+
+        PVector currentForce = new PVector(forcex, forcey);
+        acceleration.add(currentForce);
+      }
+    }
+
     velocity.add(acceleration);
     velocity.limit(topSpeed);
     location.add(velocity);
