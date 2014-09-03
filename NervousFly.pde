@@ -18,6 +18,11 @@ class NervousFly extends Mover {
     noStroke();
     fill(10, 230, 10, 200);
     ellipse(location.x, location.y, 16, 16);
+    stroke(10, 230, 10, 200);
+    strokeWeight(2);
+    line(location.x, location.y, location.x + 10, location.y + 10);
+    line(location.x, location.y, location.x - 10, location.y + 10);
+    line(location.x, location.y, location.x, location.y - 10);
 
   }
 }
