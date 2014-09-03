@@ -31,25 +31,24 @@ class Mover {
   }
 
   void checkEdges() {
+    float rightDistance = abs(location.x - width);
+    float leftDistance = abs(location.x - 0);
+    float topDistance = abs(location.y - height);
+    float bottomDistance = abs(location.y - 0);
 
-    if (location.x > width) {
-      location.x -= 1;
-      applyForce(new PVector(-5.0, 5.0));
+    if (rightDistance <= 40) {
+      applyForce(new PVector(-rightDistance, rightDistance));
 
-    } else if (location.x < 0) {
-      location.x += 1;
-      applyForce(new PVector(5.0, 5.0));
+    } else if (leftDistance <= 40) {
+      applyForce(new PVector(leftDistance, leftDistance));
     }
 
-    if (location.y > height) {
-      location.y -= 1;
-      applyForce(new PVector(-5.0, 5.0));
+    if (bottomDistance <= 40) {
+      applyForce(new PVector(bottomDistance, -bottomDistance));
 
-    } else if (location.y < 0) {
-      location.y += 1;
-      applyForce(new PVector(5.0, 5.0));
+    } else if (topDistance <= 40) {
+      applyForce(new PVector(topDistance, topDistance));
     }
-
   }
 
 }

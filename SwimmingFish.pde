@@ -7,12 +7,13 @@ class SwimmingFish extends Mover {
   void update() {
     // Acceleration direction - toward the mouse
     PVector mouseVector = new PVector(mouseX, mouseY);
-    PVector direction = PVector.sub(mouseVector, location);
-    direction.normalize();
+    PVector directionalForce = PVector.sub(mouseVector, location);
+    directionalForce.normalize();
 
-    direction.mult(0.25);
+    directionalForce.mult(0.25);
 
-    acceleration = direction;
+    acceleration = directionalForce;
+    // acceleration.div(mass);
 
     if (keyPressed) {
       // the fish is affected by random eddy currents in the water
