@@ -10,13 +10,13 @@ SwimmingFish swimmingFish;
 
 void setup() {
   size(640, 480);
-  background(30);
+  background(50, 125);
   nervousFly = new NervousFly();
   swimmingFish = new SwimmingFish();
 }
 
 void draw() {
-  background(30);
+  background(50, 125);
   nervousFly.update();
   nervousFly.checkEdges();
   nervousFly.display();

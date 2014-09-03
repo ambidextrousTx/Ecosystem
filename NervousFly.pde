@@ -15,8 +15,8 @@ class NervousFly extends Mover {
   }
 
   void display() {
-    stroke(0);
-    fill(10, 230, 10);
+    noStroke();
+    fill(10, 230, 10, 200);
     ellipse(location.x, location.y, 16, 16);
 
   }

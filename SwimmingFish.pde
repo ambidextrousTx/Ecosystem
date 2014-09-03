@@ -17,8 +17,8 @@ class SwimmingFish extends Mover {
   }
 
   void display() {
-    stroke(0);
-    fill(10, 30, 210);
+    noStroke();
+    fill(10, 30, 210, 200);
     ellipse(location.x, location.y, 25, 25);
   }
 
