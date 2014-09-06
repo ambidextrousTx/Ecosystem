@@ -21,6 +21,15 @@ class Mover {
   void display() {
   }
 
+  boolean checkNegativeFrictionPocket() {
+    if ((location.x >= 320 && location.x <= 340) &&
+      (location.y >= 20 && location.y <= 280)) {
+        return true;
+    } else {
+        return false;
+    }
+  }
+
   void applyForce(PVector force) {
     // No more wrapping around the edges
     // There are force fields at all edges now

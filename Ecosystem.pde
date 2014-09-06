@@ -11,14 +11,18 @@ SwimmingFish[] swimmingFish = new SwimmingFish[2];
 void setup() {
   size(640, 480);
   background(50, 125);
+  fill(200, 30, 30, 100);
+  rect(320, 120, 20, 260);
   nervousFly = new NervousFly();
   for (int i = 0; i < 2; i++) {
-    swimmingFish[i] = new SwimmingFish(pow((i + 1), 5));
+    swimmingFish[i] = new SwimmingFish(pow((i + 1), 4));
   }
 }
 
 void draw() {
   background(50, 125);
+  fill(200, 30, 30, 100);
+  rect(320, 20, 20, 260);
   nervousFly.update();
   nervousFly.checkEdges();
   nervousFly.display();

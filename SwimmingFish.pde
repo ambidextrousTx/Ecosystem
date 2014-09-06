@@ -27,6 +27,10 @@ class SwimmingFish extends Mover {
       }
     }
 
+    if (checkNegativeFrictionPocket()) {
+      acceleration.add(new PVector(acceleration.x * 10, acceleration.y * 10));
+    }
+
     velocity.add(acceleration);
     velocity.limit(topSpeed);
     location.add(velocity);
