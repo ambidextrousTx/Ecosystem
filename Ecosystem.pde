@@ -13,7 +13,7 @@ void setup() {
   background(50, 125);
   nervousFly = new NervousFly();
   for (int i = 0; i < 2; i++) {
-    swimmingFish[i] = new SwimmingFish((i + 1) * 5);
+    swimmingFish[i] = new SwimmingFish(pow((i + 1), 5));
   }
 }
 

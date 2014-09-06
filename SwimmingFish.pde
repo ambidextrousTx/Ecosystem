@@ -13,7 +13,7 @@ class SwimmingFish extends Mover {
     directionalForce.mult(0.25);
 
     acceleration = directionalForce;
-    // acceleration.div(mass);
+    acceleration.div(mass);
 
     if (keyPressed) {
       // the fish is affected by random eddy currents in the water
