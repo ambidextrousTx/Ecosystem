@@ -5,7 +5,7 @@ class NervousFly extends Mover {
 
   void update() {
     float xloc = map(noise(tx), 0, 1, 0, width);
-    float yloc = map(noise(ty), 0, 1, 0, height);
+    float yloc = map(noise(ty), 0, 1, 0, height/ 2);
 
     location.x = xloc;
     location.y = yloc;
