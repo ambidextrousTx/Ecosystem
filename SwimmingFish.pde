@@ -35,6 +35,12 @@ class SwimmingFish extends Mover {
     velocity.limit(topSpeed);
     location.add(velocity);
 
+    // Need to clear this out every time before
+    // update is called so that a fresh brand new
+    // acceleration can be applied the next time
+    // instead of cumulatively adding up
+    acceleration.mult(0);
+
   }
 
   void display() {
