@@ -4,6 +4,17 @@ class SwimmingFish extends Mover {
     mass = _mass;
   }
 
+  void checkEdges() {
+    if (location.x >= width || location.x <= 0) {
+        velocity.x *= -1;
+    }
+
+    if (location.y >= height || location.y <= height/ 2) {
+      velocity.y *= -1;
+    }
+  
+  }
+
   void update() {
     // Acceleration direction - toward the mouse
     PVector mouseVector = new PVector(mouseX, mouseY);
@@ -34,8 +45,6 @@ class SwimmingFish extends Mover {
     velocity.add(acceleration);
     velocity.limit(topSpeed);
     location.add(velocity);
-
-    constrain(location.y, height/ 2, height);
 
     // Need to clear this out every time before
     // update is called so that a fresh brand new
