@@ -5,14 +5,17 @@ class Mover {
   float tx, ty;
   float topSpeed;
   float mass;
+  float G;
 
   Mover() {
     location = new PVector(random(width), random(height));
     velocity = new PVector(0, 0);
+    acceleration = new PVector(0, 0);
     topSpeed = 4.0;
     tx = 0.0;
     ty = 10000.0;
     mass = 1.0;
+    G = 0.04;
   }
 
   void update() {
@@ -34,9 +37,7 @@ class Mover {
     // No more wrapping around the edges
     // There are force fields at all edges now
     
-    acceleration.x = force.x / mass;
-    acceleration.y = force.y / mass;
-
+    acceleration.add(force);
   }
 
   void checkEdges() {

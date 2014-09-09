@@ -33,8 +33,16 @@ void draw() {
   nervousFly.display();
 
   for (int i = 0; i < 2; i++) {
-    swimmingFish[i].update();
-    swimmingFish[i].checkEdges();
-    swimmingFish[i].display();
+    for (int j = 0; j < 2; j++) {
+      if (i != j) {
+        // Every other fish repels this fish
+        // Add all of them and apply to the fish
+        PVector repelForce = swimmingFish[j].repel(swimmingFish[i]);
+        swimmingFish[i].applyForce(repelForce);
+        swimmingFish[i].update();
+        swimmingFish[i].checkEdges();
+        swimmingFish[i].display();
+      }
+    }
   }
 }

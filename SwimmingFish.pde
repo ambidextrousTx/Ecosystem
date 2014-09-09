@@ -15,6 +15,21 @@ class SwimmingFish extends Mover {
   
   }
 
+  PVector repel(Mover m) {
+    // Get the force's direction
+    PVector force = PVector.sub(location, m.location);
+
+    float distance = force.mag();
+    constrain(distance, 5, 25);
+    force.normalize();
+
+    float strength = (G * mass * m.mass) / (distance * distance);
+    force.mult(strength);
+    force.mult(-1);
+
+    return force;
+  }
+
   void update() {
     // Acceleration direction - toward the mouse
     PVector mouseVector = new PVector(mouseX, mouseY);
