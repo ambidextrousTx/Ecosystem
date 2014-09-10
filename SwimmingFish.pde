@@ -1,6 +1,7 @@
 class SwimmingFish extends Mover {
 
   SwimmingFish(float _mass) {
+    location = new PVector(random(0, width), random(height/ 2, height));
     mass = _mass;
   }
 
