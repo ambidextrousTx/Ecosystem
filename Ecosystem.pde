@@ -7,6 +7,7 @@
 
 NervousFly nervousFly;
 SwimmingFish[] swimmingFish = new SwimmingFish[2];
+CannonBall cannonBall;
 Liquid liquid;
 
 void setup() {
@@ -14,6 +15,7 @@ void setup() {
   background(50, 125);
   fill(200, 30, 30, 100);
   rect(320, 120, 20, 260);
+  cannonBall = new CannonBall();
   nervousFly = new NervousFly();
   for (int i = 0; i < 2; i++) {
     swimmingFish[i] = new SwimmingFish(pow((i + 1), 4));
