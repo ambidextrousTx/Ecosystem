@@ -47,4 +47,9 @@ void draw() {
       }
     }
   }
+
+  // Fire the cannon ball
+  cannonBall.update();
+  cannonBall.display();
+  
 }
