@@ -1,6 +1,8 @@
 // Tried accelerating, but it looks most like a fly 
 // with a simple location update using Perlin noise
 
+int LENGTH = 10;
+
 class NervousFly extends Mover {
 
   void update() {
@@ -17,12 +19,12 @@ class NervousFly extends Mover {
   void display() {
     noStroke();
     fill(10, 230, 10, 200);
-    ellipse(location.x, location.y, 16, 16);
+    ellipse(location.x, location.y, 8, 8);
     stroke(10, 230, 10, 200);
     strokeWeight(2);
-    line(location.x, location.y, location.x + 10, location.y + 10);
-    line(location.x, location.y, location.x - 10, location.y + 10);
-    line(location.x, location.y, location.x, location.y - 10);
+    line(location.x, location.y, location.x + LENGTH, location.y + LENGTH);
+    line(location.x, location.y, location.x - LENGTH, location.y + LENGTH);
+    line(location.x, location.y, location.x, location.y - LENGTH);
 
   }
 }
