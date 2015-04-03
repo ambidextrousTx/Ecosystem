@@ -7,7 +7,7 @@
 
 NervousFly nervousFly;
 SwimmingFish[] swimmingFish = new SwimmingFish[2];
-CannonBall cannonBall;
+CannonBall[] cannonBalls = new CannonBall[5];
 Liquid liquid;
 
 void setup() {
@@ -15,7 +15,9 @@ void setup() {
   background(50, 125);
   fill(200, 30, 30, 100);
   rect(320, 120, 20, 260);
-  cannonBall = new CannonBall();
+  for (int i = 0; i < 5; i++) {
+    cannonBalls[i] = new CannonBall();
+  }
   nervousFly = new NervousFly();
   for (int i = 0; i < 2; i++) {
     swimmingFish[i] = new SwimmingFish(pow((i + 1), 4));
@@ -48,8 +50,11 @@ void draw() {
     }
   }
 
-  // Fire the cannon ball
-  cannonBall.update();
-  cannonBall.display();
-  
+  // Fire the cannon balls
+  for (int i = 0; i < 5; i++) {
+    if (frameCount % (i + 1) == 0) {
+      cannonBalls[i].update();
+      cannonBalls[i].display();
+    }
+  }
 }
