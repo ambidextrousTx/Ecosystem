@@ -5,6 +5,13 @@
 // Using velocity, acceleration, and Perlin noise
 // Using objects, inheritance, polymorphism
 
+color[] tropicalPalette = new color[5];
+color lightBlue = #9BCAF2;
+color white = #F2F2F2;
+color grassGreen = #738C16;
+color muddyGreen = #4C591C;
+color muddyBrown = #8C613B;
+
 NervousFly nervousFly;
 SwimmingFish[] swimmingFish = new SwimmingFish[2];
 CannonBall[] cannonBalls = new CannonBall[5];

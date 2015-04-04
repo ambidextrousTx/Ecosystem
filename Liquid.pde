@@ -13,7 +13,7 @@ class Liquid {
   void display() {
     noStroke();
     // Light blue for the liquid
-    fill(10, 10, 240, 90);
+    fill(lightBlue);
     rect(x, y, w, h);
   }
 
